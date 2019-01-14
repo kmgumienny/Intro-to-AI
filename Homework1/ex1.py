@@ -14,7 +14,10 @@ class ConnectFour:
            in direction (dx,dy)"""
 
         initialValue = self.board[x][y]
+        #checks a cell to see if there is a piece there
         if initialValue != 0:
+            #loops though 3 times in a certain direction to see
+            #if there is a winning configuration
             for i in range(3):
                 xIndex = x + (dx * (i+1))
                 yIndex = y + (dy * (i+1))
@@ -42,9 +45,9 @@ class ConnectFour:
         """Returns the winner of the game: 1 for Player 1, 2 for Player 2, and
            0 for no winner"""
         # Your code here, use isAnyLineAt()
-        currentWinner = 0
 
-
+        #Function loops through every cell on the board and checks
+        #if that cell is part of a 4 in a row configuration
         for x in range(self.h):
             for y in range(self.w):
                 #print("{} and {}".format(x, y))

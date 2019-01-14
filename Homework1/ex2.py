@@ -9,7 +9,7 @@ def isreverse(s1, s2):
     elif len(s1) != len(s2):
         return False
 
-    #checks the first char of s1 against the last char of s2 
+    #checks the first char of s1 against the last char of s2
     elif s1[0] != s2[-1]:
         return False
     else:
