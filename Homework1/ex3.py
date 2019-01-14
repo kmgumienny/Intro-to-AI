@@ -3,19 +3,19 @@ import re
 def wordset(fname):
     """Returns the set of words corresponding to the given file"""
     # Create regexp for character filtering
-    regex = re.compile('[^A-Za-z]')
+    regex = re.compile("[^A-Za-z]")
     # Your code here
 
     wordSet = set()
 
     with open(fname) as f:
-         for line in f:
-             lineLower = line.lower()
-             stringList = lineLower.split()
+        for line in f:
+            line = line.lower()
+            withoutSymbols = regex.sub(' ', line)
+            stringList = withoutSymbols.split()
 
-             for word in stringList:
-                 word = regex.sub('', word)
-                 wordSet.add(word)
+            for word in stringList:
+                wordSet.add(word)
 
     return wordSet
 
